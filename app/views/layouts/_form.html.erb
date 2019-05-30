@@ -1,0 +1,32 @@
+<%= form_with model: @article, local: true do |form| %>
+
+  <% if @article.errors.any? %>
+    <p>
+      <b><font color="Red"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</font></b>
+    </p>
+
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <font color="Red"><li><%= msg %></li></font>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<br>
+
+<p> <%= link_to "Back", articles_path %> </p>
