@@ -10,6 +10,16 @@
 
 <br>
 
+<p><b>Comments:</b></p>
+<%= render "comments/comment" %>
+
+<br>
+
+<p><b>Add a comment:</b></p>
+<%= render "comments/add_comment" %>
+
+<br>
+
 <p>
   <%= link_to "Edit", edit_article_path(@article) %> &nbsp;-&nbsp;
   <%= link_to "Delete", article_path(@article),method: :delete, data: { confirm: "Are you sure?" } %>
